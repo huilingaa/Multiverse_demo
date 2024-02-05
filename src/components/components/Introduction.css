@@ -1,0 +1,20 @@
+.wrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+  z-index: 100;
+}
+
+.scroll-wrapper {
+  position: relative;
+}
+
+.absolute-p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  height: 110px;
+}
