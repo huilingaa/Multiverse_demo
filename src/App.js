@@ -3,16 +3,16 @@ import { useEffect, useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
 import Technology from "./components/Technology";
-import Tech from "./components/Tech";
-import Music from "./components/Music";
+// import Tech from "./components/Tech";
+// import Music from "./components/Music";
 import Swiper from 'swiper';
 import 'swiper/css';
-import { Route, Routes } from "react-router-dom";
+// import { Route, Routes } from "react-router-dom";
 // import Ribbon from "./components/Ribbon";
-import Awwards from "./components/Awwards";
-import { AnimatePresence } from "framer-motion";
-import Sidebar from "./components/Siderbar";
-import MenuIcon from "@mui/icons-material/Menu";
+// import Awwards from "./components/Awwards";
+// import { AnimatePresence } from "framer-motion";
+// import Sidebar from "./components/Siderbar";
+// import MenuIcon from "@mui/icons-material/Menu";
 function App() {
   const swiperRef = useRef(null);
   const [active, setActive] = useState(0)

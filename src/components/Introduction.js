@@ -18,14 +18,14 @@ const Introduction = (props) => {
       console.log('未滑动到底部');
     }
   }
-  const handleWheel = (e) => {
-    e.stopPropagation();
-    if (e.deltaY > 0) {
-      console.log('朝上')
-    } else {
-      console.log('朝下')
-    }
-  }
+  // const handleWheel = (e) => {
+  //   e.stopPropagation();
+  //   if (e.deltaY > 0) {
+  //     console.log('朝上')
+  //   } else {
+  //     console.log('朝下')
+  //   }
+  // }
   console.log(props.active, 890790878)
   return (
     <div className="introduction">
