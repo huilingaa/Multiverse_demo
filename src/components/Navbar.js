@@ -21,7 +21,7 @@ const Navbar = (props) => {
             INTRODUCTION {props.percent}%
           </Link>
         </h3>
-        <h3>
+        <h3 >
           <Link className="link" to={"/technology"}>
              TECHNOLOGY
           </Link>

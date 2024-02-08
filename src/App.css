@@ -19,7 +19,7 @@ body,html{
 .nav-items{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 .link{
   text-decoration: none;
@@ -197,11 +197,7 @@ body,html{
   display: none;
 }
 .scroll-wrapper{
-  /* margin-top: -68px; */
-  /* top: 50%; */
-  /* height: 530px; */
-  /* overflow-y: scroll; */
-  /* transform: translate3d(0, 0, 0); */
+
 
       position: relative;
       top: 50%;
@@ -223,7 +219,6 @@ body,html{
 .scroll-wrapper p {
   font-size: 48px;
   white-space: nowrap;
-  /* white-space-collapse: collapse; */
 
 }
 .down {
