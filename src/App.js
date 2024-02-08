@@ -32,7 +32,7 @@ function App() {
     const next = nowNum + e.deltaY;
     const num = next <= 0 ? 0 : next > 10000 ? 10000 : next
     setNowNum(num);
-    if (e.deltaY > 0 && num === 10000) {
+    if (e.deltaY > 0 && num === 8900) {
       handleToNext()
     } else {
       console.log('朝下')
