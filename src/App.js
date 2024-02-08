@@ -1,18 +1,12 @@
 import "./App.css";
+import "./index.css";
+
 import { useEffect, useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
 import Technology from "./components/Technology";
-// import Tech from "./components/Tech";
-// import Music from "./components/Music";
 import Swiper from 'swiper';
 import 'swiper/css';
-// import { Route, Routes } from "react-router-dom";
-// import Ribbon from "./components/Ribbon";
-// import Awwards from "./components/Awwards";
-// import { AnimatePresence } from "framer-motion";
-// import Sidebar from "./components/Siderbar";
-// import MenuIcon from "@mui/icons-material/Menu";
 function App() {
   const swiperRef = useRef(null);
   const [active, setActive] = useState(0)
@@ -35,8 +29,6 @@ function App() {
   const [nowNum, setNowNum] = useState(0)
   const handleWheel = (e) => {
 
-    console.log('bhvbhgvhg',e)
-
     const next = nowNum + e.deltaY;
     const num = next <= 0 ? 0 : next > 10000 ? 10000 : next
     setNowNum(num);
@@ -53,7 +45,7 @@ function App() {
        active === 0 && <div className="wrap" onWheel={e => handleWheel(e)}></div>
       }
 
-      <Navbar />
+      <Navbar percent={(nowNum / 100).toFixed(2)} />
       <div ref={swiperRef} className="swiper-container" >
         <div className="swiper-wrapper">
           <div className="swiper-slide">

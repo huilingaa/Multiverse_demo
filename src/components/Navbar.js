@@ -5,28 +5,28 @@ import { Link } from "react-router-dom";
 import transition from "../transition";
 // import Ribbon from "./Ribbon";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="nav">
       <div className="logo">
-        <h2>
+
           <Link className="link-logo" to={"/"}>
             LOGO
           </Link>
-        </h2>
+     
       </div>
       <div className="nav-items">
         <h3>
           <Link className="link" to={"/"}>
-            INTRODUCTION
+            INTRODUCTION {props.percent}%
           </Link>
         </h3>
         <h3>
           <Link className="link" to={"/technology"}>
-            THE TECHNOLOGY
+             TECHNOLOGY
           </Link>
         </h3>
-        <h3>
+        {/* <h3>
           <Link className="link" to={"/tech"}>
             TECH SPOTLIGHT
           </Link>
@@ -35,7 +35,7 @@ const Navbar = () => {
           <Link className="link" to={"/music"}>
             WHY MUSIC ?
           </Link>
-        </h3>
+        </h3> */}
       </div>
       <Link className="link-menu" to={"/sidebar"}>
         <div className="menu-icon">
@@ -46,4 +46,4 @@ const Navbar = () => {
   );
 };
 
-export default transition(Navbar);
+export default Navbar;
