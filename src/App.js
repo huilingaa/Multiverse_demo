@@ -1,6 +1,5 @@
 import "./App.css";
 import "./index.css";
-
 import { useEffect, useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
@@ -11,7 +10,6 @@ function App() {
   const swiperRef = useRef(null);
   const [active, setActive] = useState(0)
   useEffect(() => {
-    console.log(swiperRef, 9897)
     swiperRef.current.swiper = new Swiper('.swiper-container', {
       mousewheel: true,
       direction: 'vertical',
@@ -19,56 +17,43 @@ function App() {
       speed: 1000,
     });
     swiperRef.current.swiper.on('slideChange', function () {
-      console.log(this.activeIndex);
+      console.log(this.activeIndex,'eacs');
       setActive(this.activeIndex)
     });
   }, [])
   const handleToNext = () => {
+    console.log('huidfj')
     swiperRef.current.swiper.slideNext();
   }
   const [nowNum, setNowNum] = useState(0)
   const handleWheel = (e) => {
-
     const next = nowNum + e.deltaY;
+
     const num = next <= 0 ? 0 : next > 10000 ? 10000 : next
     setNowNum(num);
-    if (e.deltaY > 0 && num === 8900) {
+    if (e.deltaY > 0 && num === 10000&&active==0) {
       handleToNext()
-    } else {
-      console.log('朝下')
+    } 
+    if(active==1&&num<10000){
+      swiperRef.current.swiper.slidePrev();
     }
-    console.log(nowNum)
   }
   return (
     <div className="App">
       {
-       active === 0 && <div className="wrap" onWheel={e => handleWheel(e)}></div>
+        <div className="wrap" onWheel={e => handleWheel(e)}></div>
       }
-
-      <Navbar percent={(nowNum / 100).toFixed(2)} />
+      <Navbar active={active}  percent={(nowNum / 100).toFixed(2)} />
       <div ref={swiperRef} className="swiper-container" >
         <div className="swiper-wrapper">
           <div className="swiper-slide">
-             <Introduction toNext={handleToNext} active={active} nowNum={nowNum}/>
+             <Introduction onClick={handleToNext} active={active} nowNum={nowNum}/>
           </div>
           <div className="swiper-slide">
-            <Technology />
+            <Technology  onClick={handleToNext} />
           </div>
         </div>
       </div>
-
-      {/* <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<Introduction />} />
-          <Route path="/technology" element={<Technology />} />
-          <Route path="/tech" element={<Tech />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/awwards" element={<Awwards />} />
-          <Route path="/sidebar" element={<Sidebar />} />
-          <Route path="/menuicon" element={<MenuIcon />} />
-        </Routes>
-      </AnimatePresence> */}
-      {/* <Ribbon /> */}
     </div>
   );
 }
